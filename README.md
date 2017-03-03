@@ -3,7 +3,9 @@
 ## This mini-Toolkit Check several prerequisites before starting a Task Sequence.
 
 
-Russian Blog Post: https://skorotkov.wordpress.com/2017/02/10/osdprestarttool-ztigather-wsf-userexit-script/
+Russian Blog Post: https://skorotkov.wordpress.com/2017/02/10/osdprestarttool-ztigather-wsf-userexit-script/  
+English Blog Post & description will be later, sorry.  
+
 
 Current Functions:  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
