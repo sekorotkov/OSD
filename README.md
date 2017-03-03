@@ -9,18 +9,18 @@ Current Functions:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;;; Sleep. Reason http://deploymentresearch.com/Research/Post/528/Fixing-the-ldquo-Failed-to-find-a-valid-network-adapter-rdquo-error-in-ConfigMgr-Current-Branch  
 ;; Simple functions for Sleep in secconds  
-SleepSeconds = SleepSeconds=#SleepSeconds(10)#  
-;; MDT Build In function  
-SleepMSeconds=#oUtility.SafeSleep(5*1000)#  
+SleepSeconds = #SleepSeconds(10)#  
+;; Or MDT Build In function  
+SleepMSeconds=#oUtility.SafeSleep(10*1000)#  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;;; Sync date/time from windows servers  
 PXEDateTimeSync=#DateTimeSync()#  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
-;;; Set Power Scheme  
+;;; Set Power Scheme. Background and next steps please read: https://blogs.technet.microsoft.com/deploymentguys/2015/03/26/reducing-windows-deployment-time-using-power-management/  
 SetPowerScheme=#SetPowerScheme("8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c")#  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
-;;; Set DMT Monitoring "Step Name" for visual allocate PXE-Booted device  
-SetCurrentActionName=#SetCurrentActionName("00: I'm boot to WinPE")#  
+;;; Set DMT Monitoring "Step Name" for visual allocate PXE-Booted device. Example: https://skorotkov.files.wordpress.com/2017/02/clip_image003.png  
+SetCurrentActionName=#SetCurrentActionName("00: I'm boot to PXE")#  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;;; Run DART Remote Connection  
 EnableDaRT=#EnableDaRT#  
@@ -43,7 +43,7 @@ WarnStorNotPresentAsDisk0=#WarnStorNotPresentAsDiskX("Error! Storage device", "S
 ;WarnIPNotPresent=#WarnIPNotPresent("Warning! IP addresses does not present", "Please Check driver for network!" & vbNewLine & "(or press OK for skip)", 0)#  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 ;;; ping hosts  
-;; WarnPingHosts("Title Text", "Message Text", "Wait TimeOut (Sec)", Array("Host1","Host2",...,"HostXX"), "All hosts must echo. True/False")  
+;; WarnPingHosts("Title Text", "Message Text", "Wait TimeOut (Sec)", Array("Host1","Host2",...,"HostXX"), "All hosts or Any host return echo. True/False")  
 WarnPingHosts=#WarnPingHosts("Warning! No Echo", "Please Check network OR hosts available!" & vbNewLine & "(or press OK for skip)", 0, Array("lab-sccm-r2.lab.local","lab.local","10.0.0.5"), False)#  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 
