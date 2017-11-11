@@ -599,7 +599,7 @@ Function WarnAndDiskpartClearDiskX(sTitle, sText, iTimeOut, iDisk)
 '    For Each oPartitionStatus in cPartitionStatuses
 '        oLogging.CreateEntry "OSDPreStartTool: Disk | Partition | Type | OS  = " & Join(Array(iDisk, oPartitionStatus, cPartitionStatuses(oPartitionStatus), cOsByGUIDs(cPartitionStatuses(oPartitionStatus))(0)), " | "), LogTypeInfo
 '        if cOsByGUIDs(cPartitionStatuses(oPartitionStatus))(0) <> "Windows" Then
-'        sOutput = ExecuteDiskPartCommand(oExec, "select partition " & oPartitionStatus)
+'            sOutput = ExecuteDiskPartCommand(oExec, "select partition " & oPartitionStatus)
 '            sOutput = ExecuteDiskPartCommand(oExec, "delete partition override")
 '        End If
 '    Next
