@@ -11,7 +11,7 @@
 ' //
 ' // File:      ZTIGather.wsf
 ' // 
-' // Version:   6.3.8443.1000
+' // Version:   6.3.8450.1000
 ' // 
 ' // Purpose:   Gather information and process rules controlling deployment
 ' //            process.
@@ -414,11 +414,11 @@ Class ZTIGather
 					sAssetTag = Trim(objInstance.SMBIOSAssetTag)
 				End if
 				Select Case objInstance.ChassisTypes(0)
-				Case "8", "9", "10", "11", "12", "14", "18", "21"
+				Case "8", "9", "10", "11", "12", "14", "18", "21", "30", "31", "32"
 					bIsLaptop = true
-				Case "3", "4", "5", "6", "7", "15", "16"
+				Case "3", "4", "5", "6", "7", "15", "16", "35", "36"
 					bIsDesktop = true
-				Case "23"
+				Case "23", "28"
 					bIsServer = true
 				Case Else
 					' Do nothing

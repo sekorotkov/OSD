@@ -7,7 +7,7 @@
 ' //
 ' // File:      ZTIUtility.vbs
 ' // 
-' // Version:   6.3.8443.1000
+' // Version:   6.3.8450.1000
 ' // 
 ' // Purpose:   Common Libraries for Microsoft Deployment Toolkit
 ' // 
@@ -37,7 +37,7 @@ Public Const adOpenStatic = 3
 Public Const adLockReadOnly = 1
 Public Const adLockOptimistic = 3
 
-Public Const Version = "6.3.8443.1000"
+Public Const Version = "6.3.8450.1000"
 
 
 ' Global variables
@@ -3324,7 +3324,7 @@ Class Utility
 
 			' Determine the deployment type
 
-			If (oTS.SelectSingleNode("//step[@type='BDD_InstallOS']") is nothing) and (oTS.SelectSingleNode("//step[@type='BDD_UpgradeOS']") is nothing) then
+			If (oTS.SelectSingleNode("//step[@type='BDD_InstallOS' and @disable='false']") is nothing) and (oTS.SelectSingleNode("//step[@type='BDD_UpgradeOS' and @disable='false']") is nothing) then
 				oLogging.CreateEntry "Task Sequence does not contain an OS and does not contain a LTIApply.wsf step, possibly a Custom Step or a Client Replace.", LogTypeInfo
 				oEnvironment.Item("OSGUID")=""
 				If not (oTS.SelectSingleNode("//group[@name='State Restore']") is nothing) then

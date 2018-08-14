@@ -18,6 +18,9 @@
 ' //            Added/Changed functions WarnAndDiskpartClearDiskX (beta)
 ' // Version:   0.4 - 2017-11-11
 ' //            A few bug fixes & formatting
+' // Version:   0.5 - 2018-08-14
+' //            Bug fixes. Thanks "p g" for report.
+' //            Upgrade MDT lib to 6.3.8450.1000.
 ' // ***************************************************************************
 
 
@@ -239,7 +242,7 @@ Function DateTimeSync()
 
         On Error Resume Next
         Err.Clear
-        oNetwork.MapNetworkDrive("", sRemoteName, False, sFullUsername, oEnvironment.Item("PXETimePassword"))
+        iRetRes = oNetwork.MapNetworkDrive("", sRemoteName, False, sFullUsername, oEnvironment.Item("PXETimePassword"))
         If Err.Number <> 0 then
             oLogging.CreateEntry "OSDPreStartTool: MapNetworkDrive error for: " & sRemoteName & ": " & Trim(Err.Description) & " (" & Err.Number & ")", LogTypeError
         End if
