@@ -49,7 +49,7 @@ Function WarnValidateNetworkConnectivity(sTitle, sText, iTimeOut, iSeconds, iRet
 			iRetRes = oUtility.ValidateNetworkConnectivity
 		Loop While iRetRes <> Success And iRetries > 0
 	End If
-	
+
     if iRetRes <> Success Then
 		oLogging.CreateEntry "OSDPreStartTool: WarnValidateNetworkConnectivity = Failure", LogTypeInfo
         WarnValidateNetworkConnectivity = Failure
