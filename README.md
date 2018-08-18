@@ -5,7 +5,8 @@
 Russian Blog Post: https://skorotkov.wordpress.com/2017/02/10/osdprestarttool-ztigather-wsf-userexit-script/  
 English Blog Post & description will be later, may be, sorry. Use Google Translate
 
-Current Functions:  
+### Current Functions
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Sleep. Reason http://deploymentresearch.com/Research/Post/528/Fixing-the-ldquo-Failed-to-find-a-valid-network-adapter-rdquo-error-in-ConfigMgr-Current-Branch
 ;; Simple functions for Sleep in secconds
