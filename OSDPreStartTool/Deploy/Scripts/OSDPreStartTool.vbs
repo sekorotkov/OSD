@@ -21,6 +21,8 @@
 ' // Version:   0.5 - 2018-08-14
 ' //            Bug fixes. Thanks "p g" for report.
 ' //            Upgrade MDT lib to 6.3.8450.1000.
+' // Version:   0.6 - 2018-08-18
+' //            Added function WarnValidateNetworkConnectivity. Now there is no need for the functions: "SleepMSeconds", "WarnIPNotPresent".
 ' // ***************************************************************************
 
 
@@ -31,6 +33,33 @@ Function UserExit(sType, sWhen, sDetail, bSkip)
 End Function
 
 ' // ***************************************************************************
+' Warning message if network subsystem do not work. Retry iRetries times with iSeconds seconds between
+Function WarnValidateNetworkConnectivity(sTitle, sText, iTimeOut, iSeconds, iRetries)
+    oLogging.CreateEntry "OSDPreStartTool: Entered WarnValidateNetworkConnectivity", LogTypeInfo
+    oLogging.CreateEntry "OSDPreStartTool: Sleep Seconds = " & iSeconds & ", Count Retries = " & iRetries, LogTypeInfo
+
+	On Error Resume Next
+	iRetRes = oUtility.ValidateNetworkConnectivity
+	if iRetRes <> Success Then
+		Do
+			oLogging.CreateEntry "OSDPreStartTool: ValidateNetworkConnectivity = " & iRetRes, LogTypeInfo
+			oLogging.CreateEntry "OSDPreStartTool: Sleep Seconds = " & iSeconds & ", Count Retries = " & iRetries, LogTypeInfo
+			oUtility.SafeSleep iSeconds * 1000
+			iRetries = iRetries - 1
+			iRetRes = oUtility.ValidateNetworkConnectivity
+		Loop While iRetRes <> Success And iRetries > 0
+	End If
+	
+    if iRetRes <> Success Then
+		oLogging.CreateEntry "OSDPreStartTool: WarnValidateNetworkConnectivity = Failure", LogTypeInfo
+        WarnValidateNetworkConnectivity = Failure
+        oShell.Popup sText, iTimeOut, sTitle, vbOKOnly + vbCritical
+    Else
+		oLogging.CreateEntry "OSDPreStartTool: WarnValidateNetworkConnectivity = Success", LogTypeInfo
+        WarnValidateNetworkConnectivity = Success
+    End If
+End Function
+
 
 ' Warning message if Hosts do not ping
 Function WarnPingHosts(sTitle, sText, iTimeOut, aHosts, bAllPositive)
