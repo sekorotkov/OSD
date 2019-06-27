@@ -7,7 +7,7 @@
 ' //
 ' // File:      ZTIUtility.vbs
 ' // 
-' // Version:   6.3.8450.1000
+' // Version:   6.3.8456.1000
 ' // 
 ' // Purpose:   Common Libraries for Microsoft Deployment Toolkit
 ' // 
@@ -37,7 +37,7 @@ Public Const adOpenStatic = 3
 Public Const adLockReadOnly = 1
 Public Const adLockOptimistic = 3
 
-Public Const Version = "6.3.8450.1000"
+Public Const Version = "6.3.8456.1000"
 
 
 ' Global variables

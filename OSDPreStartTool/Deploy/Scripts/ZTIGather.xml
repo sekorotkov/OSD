@@ -88,7 +88,7 @@
 	<property id="BdeDriveLetter" type="string" overwrite="false" description="Drive Letter for BDE partition (default S:) " />
 	<property id="BdeDriveSize" type="string" overwrite="false" description="Drive size for BDE partition (default 2048MB)" />
 	<property id="BdePin" type="string" overwrite="false" description="BdePin for TPMPin" />
-	<property id="BDdeDisablePreProvisioning" type="string" overwrite="false" description="Disables offline pre-provisioning of BDE. Valid values are YES or NO" />
+	<property id="BdeDisablePreProvisioning" type="string" overwrite="false" description="Disables offline pre-provisioning of BDE. Valid values are YES or NO" />
 	<property id="BdeAllowAlphaNumericPin" type="string" overwrite="false" description="Allows Pin to be Alpha Numeric valid values are YES or NO ( Allow enhanced PINs for startup Group Policy must be applied )" />
 	<property id="BDEPinMinLength" type="string" overwrite="false" description="Specifies the minimum pin length when using TPM and PIN (must be numeric)" />
 	<property id="TpmOwnerPassword" type="string" overwrite="false" description="Specifies the TPM Password for setting Ownership" />
