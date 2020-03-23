@@ -11,7 +11,7 @@ English Blog Post & description will be later, may be, sorry. Use Google Transla
 
 ;;; Sleep. Reason
 
-http://deploymentresearch.com/Research/Post/528/Fixing-the-ldquo-Failed-to-find-a-valid-network-adapter-rdquo-error-in-ConfigMgr-Current-Branch
+https://deploymentresearch.com/fixing-the-failed-to-find-a-valid-network-adapter-error-in-configmgr-current-branch/
 
 ;; Simple functions for Sleep in secconds
 
